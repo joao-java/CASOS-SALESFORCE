@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Campos de Seleção Dependentes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Exemplo de Formulário com Campos de Seleção Dependentes</h1>
+    <form id="myForm">
+        <label for="chooseOption">Escolha uma opção:</label>
+        <select id="chooseOption">
+            <option value="selecione">Selecione</option>
+            <option value="1">Carros</option>
+            <option value="2">Motos</option>
+        </select>
+
+        <!-- Campo de seleção para carros -->
+        <div id="carros" class="options">
+            <label for="chooseCarro">Escolha um carro:</label>
+            <select id="chooseCarro">
+                <option value="carro1">Carro 1</option>
+                <option value="carro2">Carro 2</option>
+                <option value="carro3">Carro 3</option>
+            </select>
+        </div>
+
+        <!-- Campo de seleção para motos -->
+        <div id="motos" class="options">
+            <label for="chooseMoto">Escolha uma moto:</label>
+            <select id="chooseMoto">
+                <option value="moto1">Moto 1</option>
+                <option value="moto2">Moto 2</option>
+                <option value="moto3">Moto 3</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // Função para mostrar ou ocultar os campos de seleção de carros e motos com base na seleção principal
+function mostrarOpcao() {
+    const selecao = document.getElementById("chooseOption").value;
+    const carros = document.getElementById("carros");
+    const motos = document.getElementById("motos");
+
+    // Oculte todos os campos
+    carros.style.display = "none";
+    motos.style.display = "none";
+
+    // Mostre o campo correspondente à seleção
+    if (selecao === "1") {
+        carros.style.display = "block";
+    } else if (selecao === "2") {
+        motos.style.display = "block";
+    }
+}
+
+// Adicione um ouvinte de evento para chamar a função quando a seleção mudar no campo principal
+document.getElementById("chooseOption").addEventListener("change", mostrarOpcao);
+
+// Chame a função inicialmente para configurar o formulário
+mostrarOpcao();
+
+</script>
+</html>
