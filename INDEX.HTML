@@ -5,53 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário com Campos de Seleção Dependentes</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .topo{
+            width: 100%;
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .topo--descricao{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .boxStyle{
+            width: 250px;
+            height: 2rem;
+            display: flex;
+            font-size: 11px;
+            border-radius: 5px;
+            border: 1px solid #c5c2c2;
+            background: #eeeeee;
+        }
+        .options{
+            padding: 0 0 0.5rem 0;
+        }
+        input[type="submit"]{
+            width: 200px;
+            height: 2rem;
+            cursor: pointer;
+        }
+        .main{
+            padding: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .botao{
+            display: flex;
+            justify-content: center;
+        }
+        .title{
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Casos</h1>
-    <form id="myForm">
-        <label for="chooseOption">Escolha uma opção:</label>
-        <select id="chooseOption">
-            <option value="selecione">Selecione</option>
-            <option value="1">Logistica</option>
-            <option value="2">Financeiro</option>
-            <option value="2">Qualidade</option>
-            <option value="2">Comercial</option>
-        </select>
-
-        <!-- Campo de seleção para carros -->
-        <div id="carros" class="options">
-            <label for="chooseCarro">Logistica:</label>
-            <select id="chooseCarro">
-                <option value="Logistica1">Devolução</option>
-                <option value="Logistica2">Material Avariado</option>
-                <option value="Logistica3">Volume</option>
-                <option value="Logistica4">Atraso</option>
-                <option value="Logistica5">Outros</option>
-            </select>
+    <div class="topo">
+        <div class="topo--descricao">
+            <h1>Casos: Atendimento ao parceiro</h1>
         </div>
+    </div>
+
+    <div class="main">
+
+        <div class="main--container">
+
+            <form id="myForm">
+                <div class="options">
+                    <label for="chooseOption" class="title" >Escolha o setor:</label>
+                    <select id="chooseOption" class="boxStyle">
+                        <option value="selecione">Selecione</option>
+                        <option value="1">Logistica</option>
+                        <option value="2">Financeiro</option>
+                        <option value="2">Qualidade</option>
+                        <option value="2">Comercial</option>
+                    </select>
+                </div>
+        
                 <!-- Campo de seleção para carros -->
-        <div id="devolucaoMain" class="options">
-            <label for="devolucao">Devolução:</label>
-            <select id="devolucao">
-                <option value="">Selecione </option>
-                <option value="devolucao1">Volume errado </option>
-                <option value="devolucao2">Produto faltando</option>
-                <option value="devolucao3">Recusa do cliente</option>
-            </select>
+                <div id="carros" class="options">
+                    <label for="chooseCarro" class="title">Logistica:</label>
+                    <select id="chooseCarro" class="boxStyle">
+                        <option value="selecionar">Selecione...</option>
+                        <option value="Logistica1">Devolução</option>
+                        <option value="Logistica2">Material Avariado</option>
+                        <option value="Logistica3">Volume</option>
+                        <option value="Logistica4">Atraso</option>
+                        <option value="Logistica5">Outros</option>
+                    </select>
+                </div>
+        
+                <!-- devolução -->
+                <div id="devolucaoMain" class="options">
+                    <label for="devolucao" class="title">Devolução:</label>
+                    <select id="devolucao" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="devolucao1">Volume errado </option>
+                        <option value="devolucao2">Produto faltando</option>
+                        <option value="devolucao3">Recusa do cliente</option>
+                    </select>
+                </div>
+                <!-- Material Avariado -->
+                <div id="Material--Avariado" class="options">
+                    <label for="Material--Avariado" class="title">Material Avariado:</label>
+                    <select id="Material--Avariado" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="MaterialAvariado1">Volume errado </option>
+                        <option value="MaterialAvariado2">Produto faltando</option>
+                        <option value="MaterialAvariado3">Recusa do cliente</option>
+                    </select>
+                </div>
+        
+                
+                <!-- Campo de seleção para motos -->
+                <div id="motos" class="options">
+                    <label for="chooseMoto">Escolha uma moto:</label>
+                    <select id="chooseMoto">
+                        <option value="moto1">Moto 1</option>
+                        <option value="moto2">Moto 2</option>
+                        <option value="moto3">Moto 3</option>
+                    </select>
+                </div>
+                
+                <div class="botao">
+                    <input type="submit" value="Criar">
+                </div>
+            </form>
         </div>
-
-        <!-- Campo de seleção para motos -->
-        <div id="motos" class="options">
-            <label for="chooseMoto">Escolha uma moto:</label>
-            <select id="chooseMoto">
-                <option value="moto1">Moto 1</option>
-                <option value="moto2">Moto 2</option>
-                <option value="moto3">Moto 3</option>
-            </select>
-        </div>
-
-        <input type="submit" value="Criar">
-    </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
@@ -61,30 +143,35 @@
     // Função para mostrar ou ocultar os campos de seleção de carros e motos com base na seleção principal
     function mostrarOpcao() {
         const selecao = document.getElementById("chooseOption").value;
+        const chooseCarro = document.getElementById("chooseCarro").value;
         console.log(selecao)
 
         const carros = document.getElementById("carros");
-        const motos = document.getElementById("motos");
         const devolucao = document.getElementById("devolucaoMain");
+        const MaterialAvariado = document.getElementById("Material--Avariado");
 
         // Oculte todos os campos
         carros.style.display = "none";
         motos.style.display = "none";
         devolucao.style.display = "none";
+        MaterialAvariado.style.display = "none";
 
         // Mostre o campo correspondente à seleção
         if (selecao === "1") {
             carros.style.display = "block";
-            if (carros.value === 'Logistica1') {
+            console.log(chooseCarro)
+            if (chooseCarro === 'Logistica1') {
                 devolucao.style.display = "block";
             }
-        } else if (selecao === "2") {
+        } 
+        else if (selecao === "2") {
             motos.style.display = "block";
         }
     }
 
     // Adicione um ouvinte de evento para chamar a função quando a seleção mudar no campo principal
     document.getElementById("chooseOption").addEventListener("change", mostrarOpcao);
+    document.getElementById("chooseCarro").addEventListener("change", mostrarOpcao);
 
     // Chame a função inicialmente para configurar o formulário
     mostrarOpcao();
