@@ -7,22 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Exemplo de Formulário com Campos de Seleção Dependentes</h1>
+    <h1>Casos</h1>
     <form id="myForm">
         <label for="chooseOption">Escolha uma opção:</label>
         <select id="chooseOption">
             <option value="selecione">Selecione</option>
-            <option value="1">Carros</option>
-            <option value="2">Motos</option>
+            <option value="1">Logistica</option>
+            <option value="2">Financeiro</option>
+            <option value="2">Qualidade</option>
+            <option value="2">Comercial</option>
         </select>
 
         <!-- Campo de seleção para carros -->
         <div id="carros" class="options">
-            <label for="chooseCarro">Escolha um carro:</label>
+            <label for="chooseCarro">Logistica:</label>
             <select id="chooseCarro">
-                <option value="carro1">Carro 1</option>
-                <option value="carro2">Carro 2</option>
-                <option value="carro3">Carro 3</option>
+                <option value="Logistica1">Devolução</option>
+                <option value="Logistica2">Material Avariado</option>
+                <option value="Logistica3">Volume</option>
+                <option value="Logistica4">Atraso</option>
+                <option value="Logistica5">Outros</option>
+            </select>
+        </div>
+                <!-- Campo de seleção para carros -->
+        <div id="devolucaoMain" class="options">
+            <label for="devolucao">Devolução:</label>
+            <select id="devolucao">
+                <option value="">Selecione </option>
+                <option value="devolucao1">Volume errado </option>
+                <option value="devolucao2">Produto faltando</option>
+                <option value="devolucao3">Recusa do cliente</option>
             </select>
         </div>
 
@@ -36,35 +50,45 @@
             </select>
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Criar">
     </form>
 
     <script src="script.js"></script>
 </body>
+
 <script>
+    
     // Função para mostrar ou ocultar os campos de seleção de carros e motos com base na seleção principal
-function mostrarOpcao() {
-    const selecao = document.getElementById("chooseOption").value;
-    const carros = document.getElementById("carros");
-    const motos = document.getElementById("motos");
+    function mostrarOpcao() {
+        const selecao = document.getElementById("chooseOption").value;
+        console.log(selecao)
 
-    // Oculte todos os campos
-    carros.style.display = "none";
-    motos.style.display = "none";
+        const carros = document.getElementById("carros");
+        const motos = document.getElementById("motos");
+        const devolucao = document.getElementById("devolucaoMain");
 
-    // Mostre o campo correspondente à seleção
-    if (selecao === "1") {
-        carros.style.display = "block";
-    } else if (selecao === "2") {
-        motos.style.display = "block";
+        // Oculte todos os campos
+        carros.style.display = "none";
+        motos.style.display = "none";
+        devolucao.style.display = "none";
+
+        // Mostre o campo correspondente à seleção
+        if (selecao === "1") {
+            carros.style.display = "block";
+            if (carros.value === 'Logistica1') {
+                devolucao.style.display = "block";
+            }
+        } else if (selecao === "2") {
+            motos.style.display = "block";
+        }
     }
-}
 
-// Adicione um ouvinte de evento para chamar a função quando a seleção mudar no campo principal
-document.getElementById("chooseOption").addEventListener("change", mostrarOpcao);
+    // Adicione um ouvinte de evento para chamar a função quando a seleção mudar no campo principal
+    document.getElementById("chooseOption").addEventListener("change", mostrarOpcao);
 
-// Chame a função inicialmente para configurar o formulário
-mostrarOpcao();
+    // Chame a função inicialmente para configurar o formulário
+    mostrarOpcao();
 
 </script>
+
 </html>
