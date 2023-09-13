@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário com Campos de Seleção Dependentes</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
 
     <style>
         *{
@@ -27,6 +30,11 @@
             justify-content: center;
             align-items: center;
             border-bottom: 1px solid #eeeeee;
+
+        }
+        .topo--descricao h1{
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 300;
         }
         .boxStyle{
             width: 250px;
@@ -36,6 +44,7 @@
             border-radius: 5px;
             border: 1px solid #c5c2c2;
             background: #eeeeee;
+            cursor: pointer;
         }
         .options{
             padding: 0 0 0.5rem 0;
@@ -52,11 +61,18 @@
             justify-content: center;
         }
         .botao{
+            margin-top: 1rem;
             display: flex;
             justify-content: center;
         }
         .title{
-            font-size: 15px;
+            font-size: 12px;
+        }
+        .titleselecao{
+            font-size: 14px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+
         }
     </style>
 </head>
@@ -73,7 +89,7 @@
 
             <form id="myForm">
                 <div class="options">
-                    <label for="chooseOption" class="title" >Escolha o setor:</label>
+                    <label for="chooseOption" class="title titleselecao" >Escolha o setor:</label>
                     <select id="chooseOption" class="boxStyle">
                         <option value="selecione">Selecione</option>
                         <option value="1">Logistica</option>
@@ -83,10 +99,10 @@
                     </select>
                 </div>
         
-                <!-- Campo de seleção para carros -->
-                <div id="carros" class="options">
-                    <label for="chooseCarro" class="title">Logistica:</label>
-                    <select id="chooseCarro" class="boxStyle">
+                <!-- LOGISTICA -->
+                <div id="logistica" class="options">
+                    <label for="logisticaa" class="title">Logistica:</label>
+                    <select id="logisticaS" class="boxStyle">
                         <option value="selecionar">Selecione...</option>
                         <option value="Logistica1">Devolução</option>
                         <option value="Logistica2">Material Avariado</option>
@@ -99,15 +115,15 @@
                 <!-- devolução -->
                 <div id="devolucaoMain" class="options">
                     <label for="devolucao" class="title">Devolução:</label>
-                    <select id="devolucao" class="boxStyle">
-                        <option value="">Selecione... </option>
+                    <select id="devolucaoS" class="boxStyle">
+                        <option value="selecionar">Selecione... </option>
                         <option value="devolucao1">Volume errado </option>
                         <option value="devolucao2">Produto faltando</option>
                         <option value="devolucao3">Recusa do cliente</option>
                     </select>
                 </div>
                 <!-- Material Avariado -->
-                <div id="Material--Avariado" class="options">
+                <div id="MaterialAvariadoMain" class="options">
                     <label for="Material--Avariado" class="title">Material Avariado:</label>
                     <select id="Material--Avariado" class="boxStyle">
                         <option value="">Selecione... </option>
@@ -118,16 +134,6 @@
                 </div>
         
                 
-                <!-- Campo de seleção para motos -->
-                <div id="motos" class="options">
-                    <label for="chooseMoto">Escolha uma moto:</label>
-                    <select id="chooseMoto">
-                        <option value="moto1">Moto 1</option>
-                        <option value="moto2">Moto 2</option>
-                        <option value="moto3">Moto 3</option>
-                    </select>
-                </div>
-                
                 <div class="botao">
                     <input type="submit" value="Criar">
                 </div>
@@ -137,45 +143,5 @@
 
     <script src="script.js"></script>
 </body>
-
-<script>
-    
-    // Função para mostrar ou ocultar os campos de seleção de carros e motos com base na seleção principal
-    function mostrarOpcao() {
-        const selecao = document.getElementById("chooseOption").value;
-        const chooseCarro = document.getElementById("chooseCarro").value;
-        console.log(selecao)
-
-        const carros = document.getElementById("carros");
-        const devolucao = document.getElementById("devolucaoMain");
-        const MaterialAvariado = document.getElementById("Material--Avariado");
-
-        // Oculte todos os campos
-        carros.style.display = "none";
-        motos.style.display = "none";
-        devolucao.style.display = "none";
-        MaterialAvariado.style.display = "none";
-
-        // Mostre o campo correspondente à seleção
-        if (selecao === "1") {
-            carros.style.display = "block";
-            console.log(chooseCarro)
-            if (chooseCarro === 'Logistica1') {
-                devolucao.style.display = "block";
-            }
-        } 
-        else if (selecao === "2") {
-            motos.style.display = "block";
-        }
-    }
-
-    // Adicione um ouvinte de evento para chamar a função quando a seleção mudar no campo principal
-    document.getElementById("chooseOption").addEventListener("change", mostrarOpcao);
-    document.getElementById("chooseCarro").addEventListener("change", mostrarOpcao);
-
-    // Chame a função inicialmente para configurar o formulário
-    mostrarOpcao();
-
-</script>
 
 </html>
