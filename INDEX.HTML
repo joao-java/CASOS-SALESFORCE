@@ -9,72 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
 
-    <style>
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .topo{
-            width: 100%;
-            height: 4rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-        }
-        .topo--descricao{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid #eeeeee;
-
-        }
-        .topo--descricao h1{
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 300;
-        }
-        .boxStyle{
-            width: 250px;
-            height: 2rem;
-            display: flex;
-            font-size: 11px;
-            border-radius: 5px;
-            border: 1px solid #c5c2c2;
-            background: #eeeeee;
-            cursor: pointer;
-        }
-        .options{
-            padding: 0 0 0.5rem 0;
-        }
-        input[type="submit"]{
-            width: 200px;
-            height: 2rem;
-            cursor: pointer;
-        }
-        .main{
-            padding: 2rem;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .botao{
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-        }
-        .title{
-            font-size: 12px;
-        }
-        .titleselecao{
-            font-size: 14px;
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="topo">
@@ -91,7 +26,7 @@
                 <div class="options">
                     <label for="chooseOption" class="title titleselecao" >Escolha o setor:</label>
                     <select id="chooseOption" class="boxStyle">
-                        <option value="selecione">Selecione</option>
+                        <option value="selecione" class="optioon">Selecione</option>
                         <option value="1">Logistica</option>
                         <option value="2">Financeiro</option>
                         <option value="2">Qualidade</option>
@@ -110,39 +45,110 @@
                         <option value="Logistica4">Atraso</option>
                         <option value="Logistica5">Outros</option>
                     </select>
+
+                    <!-- devolução -->
+                    <div id="devolucaoMain" class="options">
+                        <label for="devolucao" class="title">Devolução:</label>
+                        <select id="devolucaoS" class="boxStyle">
+                            <option value="selecionar">Selecione... </option>
+                            <option value="devolucao1">Material Avariado </option>
+                            <option value="devolucao2">Volume errado</option>
+                            <option value="devolucao3">Produto vencido</option>
+                            <option value="devolucao4">Volume faltando por erro da Forth</option>
+                            <option value="devolucao5">Recusa do cliente</option>
+                        </select>
+                        <!-- Material Avariado -->
+                    </div>
+                    
+                </div>
+
+                <!-- FINANCEIRO  -->
+                <div id="financeiro" class="options">
+                    <label for="financeiro" class="title">Financeiro:</label>
+                    <select id="financeiroS" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="financeiro1">Sustar cartorio </option>
+                        <option value="financeiro2">Renegociação do cliente</option>
+                        <option value="financeiro3">Boleto</option>
+                    </select>
+                    <!-- Renogociaçaõ do cliente -->
+                    <div id="renegociacao" class="options">
+                        <label for="renegociacao" class="title">Renegociação do cliente:</label>
+                        <select id="renegociacaoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1">Titulo protestado </option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Boleto -->
+                    <div id="boleto" class="options">
+                        <label for="boleto" class="title">Boleto:</label>
+                        <select id="boletoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="MaterialAvariado1">Titulo protestado </option>
+                            <option value="MaterialAvariado2">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- QUALIDADE  -->
+                <div id="qualidade" class="options">
+                    <label for="qualidade" class="title">Qualidade:</label>
+                    <select id="qualidadeS" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="financeiro1">Sustar cartorio </option>
+                        <option value="financeiro2">Renegociação do cliente</option>
+                        <option value="financeiro3">Boleto</option>
+                    </select>
+                    <!-- Renogociaçaõ do cliente -->
+                    <div id="renegociacao" class="options">
+                        <label for="renegociacao" class="title">Renegociação do cliente:</label>
+                        <select id="renegociacaoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1">Titulo protestado </option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Boleto -->
+                    <div id="boleto" class="options">
+                        <label for="boleto" class="title">Boleto:</label>
+                        <select id="boletoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="MaterialAvariado1">Titulo protestado </option>
+                            <option value="MaterialAvariado2">Outros</option>
+                        </select>
+                    </div>
                 </div>
         
-                <!-- devolução -->
-                <div id="devolucaoMain" class="options">
-                    <label for="devolucao" class="title">Devolução:</label>
-                    <select id="devolucaoS" class="boxStyle">
-                        <option value="selecionar">Selecione... </option>
-                        <option value="devolucao1">Volume errado </option>
-                        <option value="devolucao2">Produto faltando</option>
-                        <option value="devolucao3">Recusa do cliente</option>
-                    </select>
-                </div>
-                <!-- Material Avariado -->
-                <div id="MaterialAvariadoMain" class="options">
-                    <label for="Material--Avariado" class="title">Material Avariado:</label>
-                    <select id="Material--Avariado" class="boxStyle">
+                <!-- COMERCIAL  -->
+                <div id="comercial" class="options">
+                    <label for="comercial" class="title">Comercial:</label>
+                    <select id="comercialS" class="boxStyle">
                         <option value="">Selecione... </option>
-                        <option value="MaterialAvariado1">Volume errado </option>
-                        <option value="MaterialAvariado2">Produto faltando</option>
-                        <option value="MaterialAvariado3">Recusa do cliente</option>
+                        <option value="financeiro1">Sustar cartorio </option>
+                        <option value="financeiro2">Renegociação do cliente</option>
+                        <option value="financeiro3">Boleto</option>
                     </select>
+                    <!-- desacordo pedido -->
+                    <div id="desacordoPedido" class="options">
+                        <label for="desacordoPedido" class="title">Renegociação do cliente:</label>
+                        <select id="desacordoPedidoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="desacordoPedido1">Titulo protestado </option>
+                            <option value="desacordoPedido">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Boleto -->
+                    <div id="boleto" class="options">
+                        <label for="boleto" class="title">Boleto:</label>
+                        <select id="boletoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="MaterialAvariado1">Titulo protestado </option>
+                            <option value="MaterialAvariado2">Outros</option>
+                        </select>
+                    </div>
                 </div>
-                <div id="MaterialAvariadoMain" class="options">
-                    <label for="Material--Avariado" class="title">Material Avariado:</label>
-                    <select id="Material--Avariado" class="boxStyle">
-                        <option value="">Selecione... </option>
-                        <option value="MaterialAvariado1">Volume errado </option>
-                        <option value="MaterialAvariado2">Produto faltando</option>
-                        <option value="MaterialAvariado3">Recusa do cliente</option>
-                    </select>
-                </div>
-        
-                
+
                 <div class="botao">
                     <input type="submit" value="Criar">
                 </div>

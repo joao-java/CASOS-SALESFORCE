@@ -1,0 +1,71 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.topo{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+.topo--descricao{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+
+}
+.topo--descricao h1{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+}
+.boxStyle{
+    width: 250px;
+    height: 2.5rem;
+    display: flex;
+    font-size: 11px;
+    border-radius: 5px;
+    border: 2px solid #005EFF;
+    background: #ffffff;
+    cursor: pointer;
+}
+.options{
+    padding: 0 0 0.5rem 0;
+}
+input[type="submit"]{
+    width: 200px;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #005EFF;
+    color: #ffffff;
+    border: none;
+}
+.main{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.botao{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.title{
+    font-size: 12px;
+}
+.titleselecao{
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+
+}
+option{
+    margin: 10px;
+}
