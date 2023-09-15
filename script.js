@@ -1,3 +1,32 @@
+let btnsac = document.querySelector(".botao--sac");
+let btnatendimento = document.querySelector(".botao--atendimento");
+let topodescricao = document.querySelector(".topo--descricao h1 span");
+
+let mainContainer = document.querySelector(".main--container");
+let mainContainerSac = document.querySelector(".main--containerSac");
+mainContainerSac.style.display = "none";
+
+btnatendimento.addEventListener("click", () =>{
+    btnsac.classList.remove("ativoo")
+    btnatendimento.classList.add("ativoo")
+    topodescricao.textContent = "Atendimento ao Parceiro"
+
+    mainContainer.style.display = "block";
+    mainContainerSac.style.display = "none";
+})
+
+//SAC
+
+btnsac.addEventListener("click", () =>{
+    btnatendimento.classList.remove("ativoo")
+    btnsac.classList.add("ativoo")
+    topodescricao.textContent = "Sac"
+
+    mainContainer.style.display = "none";
+    mainContainerSac.style.display = "block";
+})
+
+
 function mostrarOpcao() {
     const selecao = document.getElementById("chooseOption").value;
 
@@ -50,7 +79,8 @@ function mostrarOpcao() {
     }
 }
 
-    
+
+
 // Função para mostrar ou ocultar os campos de seleção de carros e motos com base na seleção principal
 
 
