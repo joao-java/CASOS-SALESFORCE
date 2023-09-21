@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Campos de Seleção Dependentes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="topo">
+        <div class="topo--descricao">
+            <h1>Abertura de Caso</span></h1>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="main--container">
+
+            <form id="myForm">
+                <div class="options">
+                    <label for="chooseOption" class="title titleselecao" >Escolha o setor:</label>
+                    <select id="chooseOption" class="boxStyle">
+                        <option value="selecione" class="optioon">Selecione</option>
+                        <option value="1">Logistica</option>
+                        <option value="2">Financeiro</option>
+                        <option value="3">Qualidade</option>
+                        <option value="4">Comercial</option>
+                        <option value="5">Sac</option>
+                    </select>
+                </div>
+        
+                <!-- LOGISTICA -->
+                <div id="logistica" class="options">
+                    <label for="logisticaa" class="title">Logistica:</label>
+                    <select id="logisticaS" class="boxStyle">
+                        <option value="selecionar">Selecione...</option>
+                        <option value="Logistica1">Devolução</option>
+                        <option value="Logistica3">Volume</option>
+                        <option value="Logistica4">Atraso</option>
+                        <option value="Logistica5">Outros</option>
+                    </select>
+
+                    <!-- devolução -->
+                    <div id="devolucaoMain" class="options">
+                        <label for="devolucao" class="title">Devolução:</label>
+                        <select id="devolucaoS" class="boxStyle">
+                            <option value="selecionar">Selecione... </option>
+                            <option value="devolucao1">Material Avariado </option>
+                            <option value="devolucao2">Volume errado</option>
+                            <option value="devolucao3">Produto vencido</option>
+                            <option value="devolucao4">Volume faltando por erro da Forth</option>
+                            <option value="devolucao5">Recusa do cliente</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- FINANCEIRO  -->
+                <div id="financeiro" class="options">
+                    <label for="financeiro" class="title">Financeiro:</label>
+                    <select id="financeiroS" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="financeiro1">Sustar cartorio </option>
+                        <option value="financeiro2">Renegociação do cliente</option>
+                        <option value="financeiro3">Boleto</option>
+                    </select>
+                    <!-- Renogociaçaõ do cliente -->
+                    <div id="renegociacao" class="options">
+                        <label for="renegociacao" class="title">Renegociação do cliente:</label>
+                        <select id="renegociacaoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1">Titulo protestado </option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Boleto -->
+                    <div id="boleto" class="options">
+                        <label for="boleto" class="title">Boleto:</label>
+                        <select id="boletoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="boleto1">2° via de boleto</option>
+                            <option value="boleto2">Baixar boleto</option>
+                            <option value="boleto3">Correção de boleto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- QUALIDADE  -->
+                <div id="qualidade" class="options">
+                    <label for="qualidade" class="title">Qualidade:</label>
+                    <select id="qualidadeS" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="qualidade1">Linha Sais</option>
+                        <option value="qualidade1">Linha Fertilizante Liquido</option>
+                        <option value="qualidade1">Linha Domissaneante</option>
+                        <option value="qualidade1">Linha Condicionador Substrato</option>
+                        <option value="qualidade1">Linha Maquinas/ Pulverizadores</option>
+                    </select>
+                    <!-- Linha Sais -->
+                    <div id="fertilizanteSais" class="options">
+                        <label for="fertilizanteSais" class="title">Renegociação do cliente:</label>
+                        <select id="fertilizanteSaisS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1"> produto empredado </option>
+                            <option value="renegociacao1"> Envazado produto diferente </option>
+                            <option value="renegociacao2">Quantidade peso alterado</option>
+                            <option value="renegociacao2"> Erro em rotulo</option>
+                            <option value="renegociacao2">Caixa despacho com produto diferente</option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Linha Fertilizante Liquido -->
+                    <div id="fertilizanteLiquidos" class="options">
+                        <label for="fertilizanteLiquidos" class="title">Linha Fertilizante Liquido:</label>
+                        <select id="fertilizanteLiquidosS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1"> Solução fora do padrão </option>
+                            <option value="renegociacao1"> Envazado produto diferente </option>
+                            <option value="renegociacao2"> Defeito em gatilho</option>
+                            <option value="renegociacao2"> Caixa despacho com produto diferente</option>
+                            <option value="renegociacao2"> Erro em rotulo</option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Linha Domissaneante -->
+                    <div id="fertilizanteDomi" class="options">
+                        <label for="fertilizanteDomi" class="title">Linha Domissaneante:</label>
+                        <select id="fertilizanteDomiS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1"> Solução fora do padrão </option>
+                            <option value="renegociacao1"> Envazado produto diferente </option>
+                            <option value="renegociacao2"> Defeito em gatilho</option>
+                            <option value="renegociacao2"> Caixa despacho com produto diferente</option>
+                            <option value="renegociacao2"> Erro em rotulo</option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Linha Condicionador Substrato -->
+                    <div id="fertilizanteCond" class="options">
+                        <label for="fertilizanteCond" class="title">Linha Condicionador Substrato:</label>
+                        <select id="fertilizanteCondS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="renegociacao1"> Quantidade peso alterado </option>
+                            <option value="renegociacao2"> Erro em rotulo</option>
+                            <option value="renegociacao2"> Erro em rotulo</option>
+                            <option value="renegociacao2">Outros</option>
+                        </select>
+                    </div>
+
+                </div>
+        
+                <!-- COMERCIAL  -->
+                <div id="comercial" class="options">
+                    <label for="comercial" class="title">Comercial:</label>
+                    <select id="comercialS" class="boxStyle">
+                        <option value="">Selecione... </option>
+                        <option value="comercial1">Desacordo no Pedido </option>
+                        <option value="comercial2">Pedido de Cotação</option>
+                        <option value="comercial3">Contato de representante</option>
+                        <option value="comercial3">Tornar-se revenda</option>
+                    </select>
+                    <!-- desacordo pedido -->
+                    <div id="desacordoPedido" class="options">
+                        <label for="desacordoPedido" class="title">Renegociação do cliente:</label>
+                        <select id="desacordoPedidoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="desacordoPedido1">Titulo protestado </option>
+                            <option value="desacordoPedido">Outros</option>
+                        </select>
+                    </div>
+                    <!-- Boleto -->
+                    <div id="boleto" class="options">
+                        <label for="boleto" class="title">Boleto:</label>
+                        <select id="boletoS" class="boxStyle">
+                            <option value="">Selecione... </option>
+                            <option value="MaterialAvariado1">Titulo protestado </option>
+                            <option value="MaterialAvariado2">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- SAC  -->
+                <div class="main--containerSac">
+        
+                    <form id="myForm">
+                        <div class="options">
+                            <label for="chooseOption" class="title titleselecao" >Sac:</label>
+                            <select id="chooseOption" class="boxStyle">
+                                <option value="selecione" class="optioon">Selecione</option>
+                                <option value="1">Parceria com Marketing</option>
+                                <option value="2">Não a revenda na cidade</option>
+                                <option value="2">Problema no site</option>
+                                <option value="2">Produto não encontrado em revenda</option>
+                                <option value="2">Recomendações tecnicas</option>
+                                <option value="2">Onde compras</option>
+                                <option value="2">E-commerce rastreio</option>
+                                <option value="2">Outros</option>
+                            </select>
+                        </div>
+        
+                    </form>
+                </div>
+            </form>
+        </div>
+
+        <div class="botao">
+            <input type="submit" value="Criar">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer--main">
+            <div class="importante">
+                <span>Atendimento ao Parceiro</span>
+                <p>atendiemnto as revendas que compram direto da Forth, como mercadoria avariada,
+                    qualidade do produto, 2° via boleto...
+                </p>
+            </div>
+    
+            <div class="importante">
+                <span>Sac</span> 
+                <p>atendimento que serve para o consumidor esclarecer dúvidas, 
+                    dar sugestões, obter informações, fazer reclamações</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scriptonp.js"></script>
+</body>
+
+</html>
