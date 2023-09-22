@@ -12,11 +12,13 @@ function mostrarOpcao() {
     const comercial = document.getElementById("comercial");
     const sac = document.querySelector(".main--containerSac");
 
-    const qualidade = document.getElementById("qualidade");
+    const qualidade = document.getElementById("qualidade"); 
     const fertilizanteSais = document.getElementById("fertilizanteSais");
     const fertilizanteLiquidos = document.getElementById("fertilizanteLiquidos");
     const fertilizanteDomi = document.getElementById("fertilizanteDomi");
     const fertilizanteCond = document.getElementById("fertilizanteCond");
+
+    const desacordoPedido = document.getElementById("desacordoPedido");
     
     logistica.style.display = "none";
     devolucaoMain.style.display = "none";
@@ -33,6 +35,7 @@ function mostrarOpcao() {
     fertilizanteDomi.style.display = "none";
     fertilizanteCond.style.display = "none";
     
+    desacordoPedido.style.display = "none"
     
     console.log(selecao)
     switch (selecao) {
@@ -62,6 +65,10 @@ function mostrarOpcao() {
         
         case '4':
             comercial.style.display = "block"
+            console.log(comercial.childNodes[3].value);
+            if (comercial.childNodes[3].value === 'comercial1') {
+                desacordoPedido.style.display = "block"
+            }
             break;
         
         case '5':
