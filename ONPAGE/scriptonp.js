@@ -26,10 +26,10 @@ function mostrarOpcao() {
     renegociacao.style.display = "none";
     boleto.style.display = "none";
     comercial.style.display = "none";
+    console.log(comercial.childNodes[3].value); 
     sac.style.display = "none";
     
     qualidade.style.display = "none";
-    console.log("qualidade: "+qualidade.childNodes[3].value); 
     fertilizanteSais.style.display = "none";
     fertilizanteLiquidos.style.display = "none";
     fertilizanteDomi.style.display = "none";
@@ -60,6 +60,12 @@ function mostrarOpcao() {
             qualidade.style.display = "block"
             if (qualidade.childNodes[3].value === 'qualidade1') {
                 fertilizanteSais.style.display = "block"
+            }else if (qualidade.childNodes[3].value === 'qualidade2'){
+                fertilizanteLiquidos.style.display = "block"
+            }else if (qualidade.childNodes[3].value === 'qualidade3'){
+                fertilizanteDomi.style.display = "block"
+            }else if (qualidade.childNodes[3].value === 'qualidade4'){
+                fertilizanteCond.style.display = "block"
             }
             break;
         
@@ -68,6 +74,7 @@ function mostrarOpcao() {
             console.log(comercial.childNodes[3].value);
             if (comercial.childNodes[3].value === 'comercial1') {
                 desacordoPedido.style.display = "block"
+                desacordo.style.display = "none"
             }
             break;
         
@@ -90,6 +97,8 @@ document.getElementById("chooseOption").addEventListener("change", mostrarOpcao)
 document.getElementById("logisticaS").addEventListener("change", mostrarOpcao);
 document.getElementById("devolucaoS").addEventListener("change", mostrarOpcao);
 document.getElementById("financeiroS").addEventListener("change", mostrarOpcao);
+document.getElementById("comercialS").addEventListener("change", mostrarOpcao);
+document.getElementById("qualidadeS").addEventListener("change", mostrarOpcao);
 
 // Chame a função inicialmente para configurar o formulário
 mostrarOpcao();

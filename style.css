@@ -69,7 +69,7 @@ body{
     cursor: pointer;
 }
 .options{
-    padding: 0 0 0.5rem 0;
+    padding: 0.5rem 0 0.5rem 0;
 }
 input[type="submit"]{
     width: 200px;
